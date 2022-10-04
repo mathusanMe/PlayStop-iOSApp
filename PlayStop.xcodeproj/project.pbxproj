@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E005116A28DCBFD9004FB26C /* PostSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005116928DCBFD8004FB26C /* PostSession.swift */; };
+		E005116C28DCC21A004FB26C /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005116B28DCC21A004FB26C /* SearchResponse.swift */; };
+		E00536E728DB930A00641EF9 /* IGDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00536E628DB930900641EF9 /* IGDBClient.swift */; };
+		E00536E928DB97DC00641EF9 /* AuthentificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00536E828DB97DC00641EF9 /* AuthentificationResponse.swift */; };
+		E02B5EB128EADF68003CAEB7 /* IGDB-SWIFT-API in Frameworks */ = {isa = PBXBuildFile; productRef = E02B5EB028EADF68003CAEB7 /* IGDB-SWIFT-API */; };
+		E07B0CBF28DC6382009085FA /* AuthentificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07B0CBE28DC6382009085FA /* AuthentificationRequest.swift */; };
 		E07F645D28D5ED5B000D1291 /* PlayStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F645C28D5ED5B000D1291 /* PlayStopApp.swift */; };
 		E07F645F28D5ED5B000D1291 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F645E28D5ED5B000D1291 /* ContentView.swift */; };
 		E07F646128D5ED5E000D1291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E07F646028D5ED5E000D1291 /* Assets.xcassets */; };
 		E07F646428D5ED5E000D1291 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E07F646328D5ED5E000D1291 /* Preview Assets.xcassets */; };
+		E0E7081728EA118900609087 /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7081628EA118900609087 /* GameRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E005116928DCBFD8004FB26C /* PostSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSession.swift; sourceTree = "<group>"; };
+		E005116B28DCC21A004FB26C /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		E00536E628DB930900641EF9 /* IGDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBClient.swift; sourceTree = "<group>"; };
+		E00536E828DB97DC00641EF9 /* AuthentificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationResponse.swift; sourceTree = "<group>"; };
+		E07B0CBE28DC6382009085FA /* AuthentificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationRequest.swift; sourceTree = "<group>"; };
 		E07F645928D5ED5B000D1291 /* PlayStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07F645C28D5ED5B000D1291 /* PlayStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStopApp.swift; sourceTree = "<group>"; };
 		E07F645E28D5ED5B000D1291 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E07F646028D5ED5E000D1291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E07F646328D5ED5E000D1291 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E0E7081628EA118900609087 /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +39,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02B5EB128EADF68003CAEB7 /* IGDB-SWIFT-API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E004A59D28DC957300BCE6BD /* IGDBClient */ = {
+			isa = PBXGroup;
+			children = (
+				E00536E628DB930900641EF9 /* IGDBClient.swift */,
+			);
+			path = IGDBClient;
+			sourceTree = "<group>";
+		};
+		E004A59E28DC972800BCE6BD /* IGDB Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E07B0CBE28DC6382009085FA /* AuthentificationRequest.swift */,
+				E005116928DCBFD8004FB26C /* PostSession.swift */,
+				E0E7081628EA118900609087 /* GameRequest.swift */,
+			);
+			path = "IGDB Requests";
+			sourceTree = "<group>";
+		};
+		E004A59F28DC990900BCE6BD /* IGDB Responses */ = {
+			isa = PBXGroup;
+			children = (
+				E00536E828DB97DC00641EF9 /* AuthentificationResponse.swift */,
+				E005116B28DCC21A004FB26C /* SearchResponse.swift */,
+			);
+			path = "IGDB Responses";
+			sourceTree = "<group>";
+		};
 		E07F645028D5ED5B000D1291 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +92,9 @@
 		E07F645B28D5ED5B000D1291 /* PlayStop */ = {
 			isa = PBXGroup;
 			children = (
+				E004A59E28DC972800BCE6BD /* IGDB Requests */,
+				E004A59F28DC990900BCE6BD /* IGDB Responses */,
+				E004A59D28DC957300BCE6BD /* IGDBClient */,
 				E07F645C28D5ED5B000D1291 /* PlayStopApp.swift */,
 				E07F645E28D5ED5B000D1291 /* ContentView.swift */,
 				E07F646028D5ED5E000D1291 /* Assets.xcassets */,
@@ -83,6 +127,9 @@
 			dependencies = (
 			);
 			name = PlayStop;
+			packageProductDependencies = (
+				E02B5EB028EADF68003CAEB7 /* IGDB-SWIFT-API */,
+			);
 			productName = PlayStop;
 			productReference = E07F645928D5ED5B000D1291 /* PlayStop.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +158,9 @@
 				Base,
 			);
 			mainGroup = E07F645028D5ED5B000D1291;
+			packageReferences = (
+				E02B5EAF28EADF68003CAEB7 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */,
+			);
 			productRefGroup = E07F645A28D5ED5B000D1291 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E005116C28DCC21A004FB26C /* SearchResponse.swift in Sources */,
+				E07B0CBF28DC6382009085FA /* AuthentificationRequest.swift in Sources */,
 				E07F645F28D5ED5B000D1291 /* ContentView.swift in Sources */,
+				E005116A28DCBFD9004FB26C /* PostSession.swift in Sources */,
+				E00536E728DB930A00641EF9 /* IGDBClient.swift in Sources */,
 				E07F645D28D5ED5B000D1291 /* PlayStopApp.swift in Sources */,
+				E00536E928DB97DC00641EF9 /* AuthentificationResponse.swift in Sources */,
+				E0E7081728EA118900609087 /* GameRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E02B5EAF28EADF68003CAEB7 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/husnjak/IGDB-SWIFT-API";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E02B5EB028EADF68003CAEB7 /* IGDB-SWIFT-API */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E02B5EAF28EADF68003CAEB7 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */;
+			productName = "IGDB-SWIFT-API";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E07F645128D5ED5B000D1291 /* Project object */;
 }
