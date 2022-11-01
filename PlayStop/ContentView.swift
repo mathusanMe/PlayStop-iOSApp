@@ -38,8 +38,8 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Games")
         }
-        .navigationTitle("Games")
         .onAppear {
             IGDBClient.postAuthentification(completion: handlePostAuthentification(success:error:))
         }

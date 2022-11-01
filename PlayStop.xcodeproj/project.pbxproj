@@ -18,7 +18,6 @@
 		E07F646128D5ED5E000D1291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E07F646028D5ED5E000D1291 /* Assets.xcassets */; };
 		E07F646428D5ED5E000D1291 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E07F646328D5ED5E000D1291 /* Preview Assets.xcassets */; };
 		E080B7F129098FAB005BC636 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E080B7F029098FAB005BC636 /* Game.swift */; };
-		E0E7081728EA118900609087 /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7081628EA118900609087 /* GameRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +25,7 @@
 		E005116B28DCC21A004FB26C /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		E00536E628DB930900641EF9 /* IGDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBClient.swift; sourceTree = "<group>"; };
 		E00536E828DB97DC00641EF9 /* AuthentificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationResponse.swift; sourceTree = "<group>"; };
+		E0155D0729119DB60046E577 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E07B0CBE28DC6382009085FA /* AuthentificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationRequest.swift; sourceTree = "<group>"; };
 		E07F645928D5ED5B000D1291 /* PlayStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07F645C28D5ED5B000D1291 /* PlayStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStopApp.swift; sourceTree = "<group>"; };
@@ -33,7 +33,6 @@
 		E07F646028D5ED5E000D1291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E07F646328D5ED5E000D1291 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E080B7F029098FAB005BC636 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E0E7081628EA118900609087 /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +60,6 @@
 			children = (
 				E07B0CBE28DC6382009085FA /* AuthentificationRequest.swift */,
 				E005116928DCBFD8004FB26C /* PostSession.swift */,
-				E0E7081628EA118900609087 /* GameRequest.swift */,
 			);
 			path = "IGDB Requests";
 			sourceTree = "<group>";
@@ -78,6 +76,7 @@
 		E07F645028D5ED5B000D1291 = {
 			isa = PBXGroup;
 			children = (
+				E0155D0729119DB60046E577 /* README.md */,
 				E07F645B28D5ED5B000D1291 /* PlayStop */,
 				E07F645A28D5ED5B000D1291 /* Products */,
 			);
@@ -198,7 +197,6 @@
 				E00536E728DB930A00641EF9 /* IGDBClient.swift in Sources */,
 				E07F645D28D5ED5B000D1291 /* PlayStopApp.swift in Sources */,
 				E00536E928DB97DC00641EF9 /* AuthentificationResponse.swift in Sources */,
-				E0E7081728EA118900609087 /* GameRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
