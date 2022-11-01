@@ -8,43 +8,34 @@
 import SwiftUI
 import IGDB_SWIFT_API
 
-struct prevGame: Identifiable {
-    let id: UInt64
-    var name: String
-}
-
-struct Game: Identifiable {
-    let id: UInt64
-    var name: String
-    var coverUrl: String
-    
-}
-
 struct ContentView: View {
     @State private var games: [Game] = []
-    @State private var prevGames: [prevGame] = []
     @State private var searchText: String = ""
     
     var body: some View {
         NavigationView {
-            List(games) { game in
+            List(games.sorted(by: { $0.name.compare($1.name, options: .caseInsensitive) == .orderedSame })) { game in
                 HStack {
-                    AsyncImage(url: URL(string: game.coverUrl)) { image in
+                    AsyncImage(url: game.coverURL!) { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 100)
                     } placeholder: {
                         ProgressView()
                     }
-
                     Text(game.name)
                 }
             }
             .listStyle(.plain)
             .searchable(text: $searchText)
             .onChange(of: searchText) { value in
-                Task {
-                    await testSearch(value: value)
+                testSearch(value: value) { result in
+                    switch result {
+                        case .success(let games):
+                            self.games = games
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
                 }
             }
         }
@@ -60,41 +51,55 @@ struct ContentView: View {
             
         }
     }
-    
-    func testSearch(value: String) async {
-        if !value.isEmpty && value.count > 3 {
-            let query = APICalypse()
-                .search(searchQuery: value)
-                .fields(fields: "game.*")
-                .where(query: "game != n & game.version_parent = n")
-            
-            IGDBClient.wrapper.search(apiCalypse: query, result: { search in
-                for singleSearch in search {
-                    prevGames.append(prevGame(id: singleSearch.game.id, name: singleSearch.game.name))
-                }
-            }) { error in
-                
-            }
-            
-            for game in prevGames {
-                let query = APICalypse()
-                    .fields(fields: "image_id")
-                    .where(query: "image_id != n & game.version_parent = n & game = \(game.id)")
-                print(game.name)
-                IGDBClient.wrapper.covers(apiCalypse: query, result: { covers in
-                    if (covers.count > 0) {
-                        games.append(Game(id: game.id, name: game.name, coverUrl: imageBuilder(imageID: covers[0].imageID, size: .COVER_SMALL)))
-                    }
-                }) { error in
 
+    func testSearch(value: String, completion: @escaping (Result<[Game], Error>) -> Void) {
+        if !value.isEmpty && value.count > 3 {
+            
+            let query = APICalypse()
+                .fields(fields: "*, cover.image_id")
+                .search(searchQuery: value)
+                .where(query: "cover.image_id != n;")
+            
+            IGDBClient.wrapper.games(apiCalypse: query) { results in
+                let games = results.map {Game(game: $0) }
+                DispatchQueue.main.async {
+                    completion(.success(games))
+                }
+            } errorResponse: { error in
+                DispatchQueue.main.async {
+                    completion(.failure(error))
                 }
             }
+            
         }
         else {
-            prevGames.removeAll()
             games.removeAll()
         }
     }
+}
+
+fileprivate extension Game {
+    
+    init(game: Proto_Game, coverSize: ImageSize = .COVER_BIG) {
+        let coverURL = imageBuilder(imageID: game.cover.imageID, size: coverSize, imageType: .PNG)
+        
+        let screenshotURLs = game.screenshots.map { (scr) -> String in
+            let url = imageBuilder(imageID: scr.imageID, size: .SCREENSHOT_MEDIUM, imageType: .JPEG)
+            return url
+        }
+        
+        let company = game.involvedCompanies.first?.company.name ?? ""
+        let genres = game.genres.map { $0.name }
+        self.init(id: Int(game.id),
+                  name: game.name,
+                  storyline: game.storyline,
+                  summary: game.summary,
+                  releaseDate: game.firstReleaseDate.date,
+                  rating: game.rating,
+                  coverURLString: coverURL, screenshotURLsString: screenshotURLs, genres: genres, company: company)
+        
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
